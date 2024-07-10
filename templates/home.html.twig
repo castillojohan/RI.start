@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block metaDescription %}Formation à l'écosysteme Microsoft 365, Certifié Qualiopi, Microsoft Partners, au coeur des Pyrénées Orientales{% endblock %}
+{% block title %}Formation et assisstance Microsoft 365{% endblock %}
+{% block body %}
+<section class="main__content">
+    <section>
+        <h1>RI.Start</h1>
+        <div class="main__content__rounded">
+            <p>{{ introductionText }}</p>
+            <a href="{{ path('app_formation')}}" class="main__content--cta">Découvrez notre formation Microsoft 365</a>
+        </div>
+    </section>
+</section>
+
+<section class="main__content logo-pattern">
+    <section class="main__content__stats">
+        <h2>RI.Start en quelques chiffres</h2>
+        <section>
+        {% for key, stat in stats %}
+            <div>
+                <p>{{ key }}</p>
+                <p>{{ stat }}</p>
+            </div>
+        {% endfor %}
+        </section>
+        <h3>Professionnel ou Particulier, pourquoi pas vous ?</h3>
+        <a class="main__content--cta" href="{{ path('app_contact') }}">Contactez-nous</a>
+    </section>
+</section>    
+{% endblock %}

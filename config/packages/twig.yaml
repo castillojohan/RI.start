@@ -1,0 +1,11 @@
+twig:
+    file_name_pattern: '*.twig'
+    globals:
+        facebook_link: '%env(FACEBOOK_LINK)%'
+        linkedin_link: '%env(LINKEDIN_LINK)%'
+        x_link: '%env(X_LINK)%'
+        instagram_link: '%env(INSTAGRAM_LINK)%'
+
+when@test:
+    twig:
+        strict_variables: true

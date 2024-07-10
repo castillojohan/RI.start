@@ -1,0 +1,114 @@
+.main__content{
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__content__container{
+    position:relative;
+    width: 90% ;
+    height: 90%;
+    background-image: url('/assets/img/pexels-vlada-karpovich-4050312.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 5px black;
+}
+
+.main__content__inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--theme-secondary)
+}
+
+h1{
+    filter: drop-shadow(1px 1px 2px var(--theme-secondary));
+}
+
+form{
+    padding: 1em 2em;
+    div{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        label{
+            text-align: left;
+            color: white;
+            font-weight: bold;
+            filter: drop-shadow(1px 1px 2px var(--theme-secondary));
+        }
+        input, textarea{
+            font-size: 1em;
+            padding: 0.4em;
+        }
+        textarea{
+            font-size: 1.3em;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style: none;
+                color: darkred;
+                text-align: left;
+            }
+        }
+    }
+}
+
+button.main__content--cta{
+    font-size: 1em;
+    padding: 0.8em;
+    border-radius: 10px;
+    &:hover{
+        background-color: var(--theme-secondary);
+        color: white;
+        transition: background-color 1s ease;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+form div:nth-child(5){
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    input{
+        width:60px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .main__content{
+        height:100vh;
+    }
+    form{
+        padding: 0.5em 1em;
+    }
+}
+
+@media screen and (max-width:1024px){
+    section.main__content{
+        width:100%;
+        padding:0;
+    }
+}
+
+@media screen and (max-width:768px){
+    section.main__content{
+        .main__content__container{
+            width:95%;
+        }
+    }
+}
+
+@media screen and (max-width:320px){
+
+}

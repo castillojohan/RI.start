@@ -1,0 +1,109 @@
+{% extends "base.html.twig"%}
+{% block metaDescription %}Notre formation Microsoft 365 sur deux jours,à 336€ au lieu de 849€, en présentitiel sur notre centre de formation dans le 66{% endblock %}
+{% block title %}Notre formation Microsoft 365{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="./assets/css/formation.css">
+{% endblock %}
+{% block body %}
+<section class="main__content logo-pattern top-left">
+    <h1>Savoir, C'est Pouvoir</h1>
+    <div class="main__content__carroussel">
+        <div class="main__content__carrousel__container">
+            <div class="carroussel-navigation">
+                <span class="left-arrow">&lt;</span>
+                <span class="right-arrow">&gt;</span>
+            </div>
+            {% for img in data.carrousselImg %}
+                <img src={{ img["src"] }} alt="{{ img["alt"] }}">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="main__content logo-pattern middle-right">
+    <article>
+        <h2>{{ data.formationFactSheet['title'] }}</h2>
+        <section class="main__content__article">
+            <img src="./assets/img/form.webp" alt="image représentant un groupe de travail autour d'un bureau">
+            <section class="main__content__article__main">
+                <p>{{ data.formationFactSheet['description'] }}</p>
+                <p>
+                    <span class="stroked">Tarif : {{ data.formationFactSheet['oldPrice'] }}€ HT</span>
+                    <strong>Nouveau Tarif : {{ data.formationFactSheet['newPrice'] }}€ HT</strong>
+                    <a href="#more">En savoir plus</a>
+                </p>
+                
+                <section class="main__content__cta">
+                    <a href="{{ data.formationFactSheet['bookingLink'] }}" class="main__content--cta" rel="nofollow">RESERVEZ VOTRE PLACE</a>
+                    <a href="{{ data.formationFactSheet['planFormationLink'] }}" rel="nofollow" target="_blank" rel='noopener' rel='noreferer'>PLAN DE FORMATION TELECHARGEABLE</a>
+                </section>
+            </section>
+        </section>
+    </article>
+</section>
+
+<section class="main__content">
+    {% for paragraph in data.formationContent %}
+            <section class="main__content__description">
+            <h3>{{ paragraph['title']}}</h3>
+            {% if paragraph['p'] is not iterable %}
+                <p>{{ paragraph['p']|raw }}</p>
+            {% else %}
+                <ul>
+                    {% for listElement in paragraph['p'] %}
+                        <li>{{ listElement }}</li>
+                    {% endfor %}
+                </ul>    
+            {% endif %}
+        </section>
+    {% endfor %}
+</section>
+
+<section id='more' class="main__content">
+    <h3>Programme de la formation</h3>
+    <section class="main__content__description__container">
+    {% for key, program in data.formationProgram %}
+    {% if loop.index is odd %}
+        <section class="main__content__description__first-day logo-pattern top-left">
+    {% else %}
+        <section class="main__content__description__first-day logo-pattern corner-right">
+    {% endif %}
+            <h4>{{ key }}</h4>
+            <div>
+                {% for key, programList in program %}
+                <span class="journey-landmark">{{ key }}:</span>
+                <strong>{{ programList['title'] }}</strong>
+                <span>Contenu:</span>
+                <ul>
+                {% for item in programList['Contenu'] %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+                <span>Atelier:</span>
+                <ul>
+                {% for item in programList['Atelier'] %}
+                    <li>{{ item }}</li>
+                {% endfor %} 
+                </ul>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+    </section>
+</section>
+
+<section class="main__content main__content__referent">
+    <div>
+        <img src="{{ data.handiReferent['img']['src'] }}" alt="{{ data.handiReferent['img']['alt'] }}">
+    </div>
+    <div class="main__content main__content__contact">
+        <p class="main__content__referent__title">Votre référent handicap</p>
+        <p>{{ data.referentName }} : {{ obfuscatedPhone|raw }}</p>
+        <p>{{ obfuscatedMail|raw }}</p>
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script type="module" src="./assets/js/carroussel.js"></script>
+    <script type="module" src="./assets/js/decorationPattern.js"></script>
+{% endblock %}

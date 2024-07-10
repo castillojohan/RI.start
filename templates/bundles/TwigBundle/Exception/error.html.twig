@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}Erreur{% endblock %}
+{% block body %}
+    <h1>Oops, une erreur est survenue</h1>
+
+    <p>
+        Le site web à rencontré un problème, veuillez contacter un administrateur et si vous le souhaitez, <a href="{{ path('app_main') }}">retourner à l'accueil</a>.
+    </p>
+{% endblock %}

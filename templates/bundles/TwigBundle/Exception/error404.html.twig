@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %} Page non trouvée {% endblock %}
+{% block body %}
+    <section class="main__content">
+        <h1>Oops, la page que vous semblez chercher n'existe pas</h1>
+        <p>
+            La page que vous rechercher n'a pas été trouvée, vous pouvez si vous le souhaitez, <a href="{{ path('app_main') }}">retourner à la page d'accueil</a>.
+        </p>
+    </section>
+{% endblock %}

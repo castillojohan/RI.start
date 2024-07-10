@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block metaDescription %}Obtenez toute l'assistance dont vous avez besoin, Laissez nous prendre la main avec nos suites utilitaire.{% endblock %}
+{% block title %}Besoin d'assistance ?{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/assets/css/assistance.css">
+{% endblock %}
+{% block body %}
+    <section class="main__content">
+        <h1>Besoin d'assistance ? Téléchargez l'utilitaire dont vous avez besoin</h1>
+        {% for software in data %}
+        <section class="main__content__utils">
+            <p>{{ software['p'] }}</p>
+            <a href="{{ software['link']}}" rel="nofollow"><img src="{{ software['imgSrc'] }}" alt="{{ software['imgAlt'] }}"></a>
+        </section>
+        {% endfor %}
+    </section>
+{% endblock %}

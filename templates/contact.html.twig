@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block metaDescription %}Besoin d'en savoir plus ? Une question ? Contactez-nous{% endblock %}
+{% block title %}Contact{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block body %}
+    <section class="main__content">
+        <div class="main__content__container">
+            <div class="main__content__inner">
+                <h1>Ecrivez-nous</h1>
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script type="module" src="./assets/js/captcha.js"></script>
+{% endblock %}

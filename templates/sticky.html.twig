@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: lightblue;
+            padding: 1em 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            padding: 1em;
+        }
+        .content {
+            height: 200vh;
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">ACCUEIL</a></li>
+            <li><a href="#">FORMATION</a></li>
+            <li><a href="#">ASSISTANCE</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nulla nunc consequat nunc, nec aliquam est quam non erat. Donec sit amet nibh a massa ullamcorper consequat. Aenean sit amet neque lectus. Praesent vel nunc sapien. Sed nec neque eget ligula vestibulum lacinia ac ac orci. Curabitur non sodales eros. Integer id ligula nec risus vehicula blandit vel sed nisi. Phasellus sit amet neque at justo tincidunt tempus. Nullam facilisis eros a justo consequat, et egestas turpis fermentum. Integer ac nunc erat. Integer quis erat nisi.</p>
+    </div>
+</body>
+</html>
