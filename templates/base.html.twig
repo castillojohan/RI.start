@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.googleapis.com fonts.gstatic.com;">
+        {% set nonce = random() %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-{{ nonce }}'; object-src 'self'; base-uri 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.googleapis.com fonts.gstatic.com;">
         <meta name="robots" content="noindex, nofollow">
         <meta name="description" content="{% block metaDescription %}{% endblock %}">
         <title>RI.start | {% block title %}{% endblock %}</title>
@@ -41,7 +42,7 @@
             </div>
         </div>
         {% include "_footer.html.twig" %}
-        <script type="module" src="/assets/js/main.js"></script>
+        <script type="module" nonce="{{ nonce }}" src="/assets/js/main.js"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

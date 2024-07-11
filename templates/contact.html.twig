@@ -17,5 +17,5 @@
     </section>
 {% endblock %}
 {% block javascripts %}
-    <script type="module" src="./assets/js/captcha.js"></script>
+    <script type="module" nonce="{{ nonce }}" src="./assets/js/captcha.js"></script>
 {% endblock %}
