@@ -6,7 +6,7 @@ html{
 
     font-family: "Montserrat", sans-serif;
     font-size: larger;
-    font-weight:500;
+    font-weight:700;
     a{
         text-decoration: none;
     }
@@ -17,7 +17,7 @@ html{
         color: white;
     }
     .main__content p, .main__content ul, .main__content h2 , .main__content h3, .main__content h4{
-        filter:drop-shadow(0px 0px 1px black);
+        filter:drop-shadow(0px 1px 1px black);
     }
 }
 
